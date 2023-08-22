@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Course</title>
-  <link rel="stylesheet" href="/static/createcourse.css">
-</head>
+{% block head %}
+<title>Create Course</title>
+<link rel="stylesheet" href="/static/createcourse.css">
+{% endblock %}
 
-<body>
-  <form action="">
+{% block content %}
+<div class="create-course">
+  <form method="post">
     <h1>Create New Course</h1>
     <div>
       <label for="title">Course Title</label>
@@ -26,6 +24,5 @@
 
     <button type="submit">Submit</button>
   </form>
-</body>
-
-</html>
+</div>
+{% endblock %}

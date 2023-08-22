@@ -1,28 +1,23 @@
-html,
 body {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-body {
+.create-course {
   background: linear-gradient(0.33turn, #3f87a6, #ebf8e1, #f69d3c);
   color: #222;
   display: grid;
   place-content: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
+  flex-grow: 1;
 }
 
-form {
+.create-course h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.create-course > form {
   display: flex;
   flex-direction: column;
   padding: 50px;
@@ -34,18 +29,19 @@ form {
   border: 1px solid #d1d1d1;
 }
 
-form > div {
+.create-course > form > div {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-form > label {
+.create-course > form label {
   display: block;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
+  color: #444;
 }
 
-input {
+.create-course > form input {
   display: block;
   border: 1px solid #d1d1d1;
   border-radius: 5px;
@@ -53,7 +49,7 @@ input {
   box-shadow: 0 0 3px 0px rgba(221, 221, 221, 50%);
 }
 
-button {
+.create-course > form > button {
   margin-top: 20px;
   padding: 20px;
   border: none;
@@ -63,13 +59,14 @@ button {
   font-size: 1.2rem;
   cursor: pointer;
   box-shadow: 0 0 3px 0px rgba(221, 221, 221, 50%);
-  background-color: #e9e9e9;
+  background-color: hsl(198, 45%, 70%);
+  color: inherit;
 }
 
-button:hover {
+.create-course > form > button:hover {
   filter: brightness(0.95);
 }
 
-button:active {
+.create-course > form > button:active {
   filter: brightness(0.9);
 }

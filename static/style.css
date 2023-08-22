@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+nav {
+  position: relative;
+  box-shadow: 0 0 3px 0 rgb(187, 187, 187);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
