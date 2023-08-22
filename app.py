@@ -1,14 +1,19 @@
 import re
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from .db import connection
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "home"
 
 @app.route("/register", methods =["GET", "POST"])
 def register():
     msg = ""
     cursor = connection.cursor()
-    if request.method == "POST" and "username" in request.form and "password" in request.form and "email" in request.form :
+
+    if request.method == "POST" and "username" in request.form and "password" in request.form and "email" in request.form:
         username = request.form["username"]
         password = request.form["password"]
         email = request.form["email"]
@@ -35,6 +40,25 @@ def register():
 
     elif request.method == "POST":
         msg = "Please fill out the form"
-    
+
     return render_template("register.html", msg = msg)
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid credentials. Please try again.'
+        else:
+            return redirect(url_for('home'))
+    return render_template('login.html', error = error)
+
+@app.route("/create-course", methods=["GET", "POST"])
+def create_course():
+    msg = ""
+    # cursor = connection.cursor()
+
+    # if request.method == "POST":
+        # pass
+
+    return render_template("create_course.html", msg = msg)
